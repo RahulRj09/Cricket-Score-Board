@@ -6,11 +6,12 @@ public class Player {
     private String name;
     private int score;
     private int wickets;
-
-    public Player(String name, int score, int wickets) {
+    private int ball;
+    public Player(String name) {
         this.name = name;
-        this.score = score;
-        this.wickets = wickets;
+        this.score = 0;
+        this.wickets = 0;
+        this.ball = 0;
     }
 
     public int play() {
@@ -34,5 +35,13 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public int getBall() {
+        return ball;
+    }
+
+    public void setBall() {
+        this.ball += 1;
     }
 }

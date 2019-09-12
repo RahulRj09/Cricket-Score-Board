@@ -17,6 +17,7 @@ public class Cricket {
         for (int i = 0; i < over * 6; i++) {
             Player currentPlayer = players.get(currentPlayerIndex);
             int run = currentPlayer.play();
+            currentPlayer.setBall();
             currentPlayerIndex = run % 2;
         }
     }
