@@ -31,4 +31,8 @@ public class Player {
     public int getScore() {
         return score;
     }
+
+    public String getName() {
+        return name;
+    }
 }
