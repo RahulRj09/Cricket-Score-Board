@@ -15,7 +15,13 @@ public class Cricket {
     public void play() {
         Player currentPlayer = players.get(currentPlayerIndex);
         for (int i = 0; i < over * 6; i++) {
-            currentPlayer.play()
+            int run = currentPlayer.play();
+            if (run % 2 != 0 && currentPlayerIndex == 0) {
+                currentPlayerIndex = 1;
+            }
+            if (run % 2 != 0 && currentPlayerIndex == 1) {
+                currentPlayerIndex = 0;
+            }
         }
     }
 }
