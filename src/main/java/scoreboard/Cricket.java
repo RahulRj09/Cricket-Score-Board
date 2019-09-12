@@ -10,4 +10,7 @@ public class Cricket {
         this.players = players;
         this.over = over;
     }
+
+    public void play() {
+    }
 }

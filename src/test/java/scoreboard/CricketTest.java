@@ -16,5 +16,6 @@ public class CricketTest {
         players.add(rahul);
         players.add(nitesh);
         Cricket cricket = new Cricket(players,1);
+        cricket.play();
     }
 }
