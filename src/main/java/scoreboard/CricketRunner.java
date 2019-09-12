@@ -12,5 +12,7 @@ public class CricketRunner {
         players.add(nitesh);
         Cricket cricket = new Cricket(players, 1);
         cricket.play();
+        Board board = new Board(players);
+        board.print();
     }
 }
