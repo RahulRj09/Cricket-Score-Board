@@ -12,6 +12,9 @@ public class Player {
     }
 
     public void play() {
+        int run = getRun();
+    }
 
+    private int getRun() {
     }
 }
