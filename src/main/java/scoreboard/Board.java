@@ -17,4 +17,6 @@ public class Board {
         }
     }
 
+    public void calculateStrikeRate(int score, int ball) {
+    }
 }
