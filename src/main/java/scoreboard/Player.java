@@ -10,4 +10,8 @@ public class Player {
         this.score = score;
         this.wickets = wickets;
     }
+
+    public void play() {
+
+    }
 }
