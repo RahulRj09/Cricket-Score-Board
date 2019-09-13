@@ -4,44 +4,64 @@ import java.util.Random;
 
 public class Player {
     private String name;
-    private int score;
+    private int batsmanRuns;
+    private int bowlerRuns;
     private int wickets;
     private int ball;
+
     public Player(String name) {
         this.name = name;
-        this.score = 0;
+        this.batsmanRuns = 0;
         this.wickets = 0;
         this.ball = 0;
+        this.bowlerRuns = 0;
     }
 
-    public int play() {
-        int run = getRun();
-        setScore(run);
-        return run;
+    public int getBowlerRuns() {
+        return bowlerRuns;
+    }
 
+    public void setBowlerRuns(int bowlerRuns) {
+        this.bowlerRuns += bowlerRuns;
+    }
+
+    int play() {
+        int run = getRun();
+        if (run != 5) {
+            setBatsmanRuns(run);
+        }
+        return run;
     }
 
     private int getRun() {
         return new Random().nextInt(6) + 1;
     }
 
-    public void setScore(int score) {
-        this.score += score;
+    private void setBatsmanRuns(int batsmanRuns) {
+        this.batsmanRuns += batsmanRuns;
     }
 
-    public int getScore() {
-        return score;
+    int getBatsmanRuns() {
+        return batsmanRuns;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public int getBall() {
+    int getBall() {
         return ball;
     }
 
-    public void setBall() {
+    void setBall() {
         this.ball += 1;
+    }
+
+    public int getWickets() {
+        return wickets;
+    }
+
+    public void setWickets(int wickets) {
+        this.wickets += wickets;
     }
 }
