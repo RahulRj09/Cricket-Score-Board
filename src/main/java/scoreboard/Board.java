@@ -14,8 +14,8 @@ public class Board {
         System.out.printf("%20s   %10s %10s %15s\n", "Player Name", "Runs", "Balls", "Strike Rate");
         for (Player player : players) {
             if (player.getBatsmanRuns() != 0) {
-                int strikeRate = calculateStrikeRate(player.getBatsmanRuns(), player.getBall());
-                System.out.printf("%20s   %10d %10d %15d \n", player.getName(), player.getBatsmanRuns(), player.getBall(), strikeRate);
+                double strikeRate = calculateStrikeRate(player.getBatsmanRuns(), player.getBall());
+                System.out.printf("%20s   %10d %10d %15f \n", player.getName(), player.getBatsmanRuns(), player.getBall(), strikeRate);
             }
         }
         System.out.println("\n");
@@ -35,7 +35,7 @@ public class Board {
         return bowlerRuns / over;
     }
 
-    public int calculateStrikeRate(int score, int ball) {
+    public double calculateStrikeRate(int score, int ball) {
         return (score * 100) / ball;
     }
 }

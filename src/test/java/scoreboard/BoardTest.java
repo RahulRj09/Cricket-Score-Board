@@ -12,6 +12,10 @@ public class BoardTest {
     public void shouldBeCalculateTheBattingStrikeRate() {
         List<Player> players = new ArrayList<>();
         Board board = new Board(players);
-        assertEquals(104, board.calculateStrikeRate(93, 89));
+        assertEquals(104.00000, board.calculateStrikeRate(93, 89),0);
+    }
+    @Test
+    public void shouldBeCalculateTheBowlerEconomyRate(){
+
     }
 }
