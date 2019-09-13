@@ -31,7 +31,7 @@ public class Board {
         }
     }
 
-    private double calculateEconomyRate(int bowlerRuns, int over) {
+    public double calculateEconomyRate(int bowlerRuns, int over) {
         return bowlerRuns / over;
     }
 
