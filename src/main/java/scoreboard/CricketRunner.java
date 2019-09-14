@@ -9,10 +9,13 @@ public class CricketRunner {
         Player rahul = new Player("rahul");
         Player nitesh = new Player("nitesh");
         Player pralhad = new Player("pralhad");
+        Player pavan = new Player("pavan");
         players.add(rahul);
         players.add(nitesh);
         players.add(pralhad);
-        Cricket cricket = new Cricket(players, 1);
+        players.add(pavan);
+        Cricket cricket = new Cricket(players, 2);
+        int over = cricket.getOver();
         cricket.play();
         Board board = new Board(players);
         board.print();

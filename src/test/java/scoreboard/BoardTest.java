@@ -20,4 +20,5 @@ public class BoardTest {
         Board board = new Board(players);
         assertEquals(3.00000,board.calculateEconomyRate(3,1),0);
     }
+
 }
