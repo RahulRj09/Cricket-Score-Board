@@ -5,24 +5,25 @@ import java.util.List;
 public class Board {
     private List<Player> players;
     private int totalScore = 0;
+    private int over;
 
-    public Board(List<Player> players) {
+    public Board(List<Player> players, int over) {
         this.players = players;
+        this.over = over;
     }
 
-    private int over;
 
     void print() {
         System.out.printf("%67s\n", "  Batsman  -----------------------------------------------------");
         System.out.printf("%20s   %10s %10s %15s\n", "Player Name", "Runs", "Balls", "Strike Rate");
         for (Player player : players) {
             if (player.getBatsmanRuns() != 0) {
-                over += player.getBall() / 6;
                 double strikeRate = calculateStrikeRate(player.getBatsmanRuns(), player.getBall());
                 System.out.printf("%20s   %10d %10d %15f \n", player.getName(), player.getBatsmanRuns(), player.getBall(), strikeRate);
                 setTotalScore(player.getBatsmanRuns());
             }
         }
+        getCurrentRunRate(totalScore, this.over);
         System.out.printf("%67s\n", "  Total ----------------------------------------------------- " + totalScore);
         System.out.println("\n");
         System.out.printf("%67s\n", "  Bowler  -----------------------------------------------------");
@@ -35,6 +36,10 @@ public class Board {
                         over, player.getWickets(), economyRate);
             }
         }
+    }
+
+    private double getCurrentRunRate(int score, int over) {
+        return 0.0;
     }
 
     private void setTotalScore(int score) {

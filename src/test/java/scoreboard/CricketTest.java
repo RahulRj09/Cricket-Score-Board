@@ -5,8 +5,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class CricketTest {
     @Test
     public void shouldBePlay() {
@@ -17,6 +15,6 @@ public class CricketTest {
         players.add(nitesh);
         Cricket cricket = new Cricket(players, 1);
         cricket.play();
-        Board board = new Board(players);
+        Board board = new Board(players, over);
     }
 }
