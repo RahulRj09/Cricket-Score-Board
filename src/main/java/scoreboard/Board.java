@@ -23,8 +23,8 @@ public class Board {
                 setTotalScore(player.getBatsmanRuns());
             }
         }
-        getCurrentRunRate(totalScore, this.over);
-        System.out.printf("%67s\n", "  Total ----------------------------------------------------- " + totalScore);
+        double currentRunRate = getCurrentRunRate(totalScore, this.over);
+        System.out.printf("%55s %5f %5d\n", "------------------------------------------ ", currentRunRate, totalScore);
         System.out.println("\n");
         System.out.printf("%67s\n", "  Bowler  -----------------------------------------------------");
         System.out.printf("%20s   %10s %10s %15s %15s\n", "Player Name", "Runs", "Over", "wickets", "EconomyRate");
@@ -38,8 +38,8 @@ public class Board {
         }
     }
 
-    private double getCurrentRunRate(int score, int over) {
-        return 0.0;
+    public double getCurrentRunRate(int score, int over) {
+        return score / over;
     }
 
     private void setTotalScore(int score) {

@@ -13,8 +13,8 @@ public class CricketTest {
         Player nitesh = new Player("nitesh");
         players.add(rahul);
         players.add(nitesh);
-        Cricket cricket = new Cricket(players, 1);
+        Cricket cricket = new Cricket(players, 2);
         cricket.play();
-        Board board = new Board(players, over);
+        Board board = new Board(players, 2);
     }
 }
