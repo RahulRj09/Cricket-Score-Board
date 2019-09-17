@@ -13,7 +13,7 @@ public class CricketTest {
         Player nitesh = new Player("nitesh");
         players.add(rahul);
         players.add(nitesh);
-        Cricket cricket = new Cricket(players, 2);
+        Cricket cricket = new Cricket(batsman, players, 2);
         cricket.play();
         Board board = new Board(cricket.getPlayers(),cricket.getOver());
     }

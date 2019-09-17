@@ -9,11 +9,11 @@ public class Cricket {
     private int currentPlayerIndex;
     private int currentBowlerIndex;
 
-    public Cricket(List<Player> players, int over) {
-        this.players = players;
+    public Cricket(List<Player> batsman, List<Player> bowlers, int over) {
+        this.players = batsman;
         this.over = over;
         this.currentPlayerIndex = 0;
-        this.currentBowlerIndex = players.size() - 1;
+        this.currentBowlerIndex = bowlers.size() - 1;
     }
 
     public void play() {
