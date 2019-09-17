@@ -9,14 +9,14 @@ public class CricketRunner {
                 new Player("pralhad"), new Player("pavan"));
         List<Player> pak = Arrays.asList(new Player("mohit"), new Player("aman"),
                 new Player("pankaj"), new Player("pk"));
-        Cricket firstInning = new Cricket(ind,pak, 4);
+        Cricket firstInning = new Cricket(ind, pak, 4);
         firstInning.play();
-        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getPlayers(),firstInning.getBowlers(), firstInning.getOver());
+        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getPlayers(), firstInning.getBowlers(), firstInning.getOver());
+        Cricket secondInning = new Cricket(pak, ind, 4);
+        secondInning.play();
         scoreBoard.print();
         System.out.println("----++++++++++++-------------------********************---------------++++++++++++++++-----------");
-        Cricket secondInning = new Cricket(pak,ind,4);
-        secondInning.play();
-        ScoreBoard scoreBoard1 = new ScoreBoard(secondInning.getPlayers(),secondInning.getBowlers(),secondInning.getOver());
+        ScoreBoard scoreBoard1 = new ScoreBoard(secondInning.getPlayers(), secondInning.getBowlers(), secondInning.getOver());
         scoreBoard1.print();
     }
 }

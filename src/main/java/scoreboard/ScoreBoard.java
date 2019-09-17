@@ -37,6 +37,7 @@ public class ScoreBoard {
                     over, player.getWickets(), economyRate);
 
         }
+        System.out.println("\n");
     }
 
     public double getCurrentRunRate(int score, int over) {
