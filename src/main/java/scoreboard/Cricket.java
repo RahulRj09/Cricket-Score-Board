@@ -7,7 +7,7 @@ public class Cricket {
     private final List<Player> bowlers;
     private List<Player> batsman;
     private int over;
-    private int currentPlayerIndex;
+    private int currentBatsmanIndex;
     private int currentBowlerIndex;
     private int totalBalls = 0;
 
@@ -15,14 +15,15 @@ public class Cricket {
         this.batsman = batsman;
         this.over = over;
         this.bowlers = bowlers;
-        this.currentPlayerIndex = 0;
+        this.currentBatsmanIndex = 0;
         this.currentBowlerIndex = bowlers.size() - 1;
         this.totalBalls = bowlers.size() * 6;
     }
 
     public void play() {
+
         for (int i = 1; i <= over * 6; i++) {
-            Player currentPlayer = batsman.get(currentPlayerIndex);
+            Player currentPlayer = batsman.get(currentBatsmanIndex);
             int run = getRun();
             currentPlayer.setBatsmanRuns(run);
             currentPlayer.setBatsmanTotalPlayedBalls();
@@ -42,7 +43,7 @@ public class Cricket {
             }
             ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, over);
             scoreBoard.print();
-            currentPlayerIndex = run % 2;
+            currentBatsmanIndex = run % 2;
         }
     }
 
