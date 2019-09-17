@@ -15,6 +15,6 @@ public class CricketTest {
         players.add(nitesh);
         Cricket cricket = new Cricket(players, 2);
         cricket.play();
-        Board board = new Board(players, 2);
+        Board board = new Board(cricket);
     }
 }

@@ -38,7 +38,7 @@ public class Cricket {
         if (i == players.size() - 2) {
             return players.size() - 1;
         }
-            return players.size() - 2;
+        return players.size() - 2;
     }
 
     public int getOver() {
