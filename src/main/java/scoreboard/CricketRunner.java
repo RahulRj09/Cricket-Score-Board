@@ -14,10 +14,9 @@ public class CricketRunner {
         players.add(nitesh);
         players.add(pralhad);
         players.add(pavan);
-        Cricket cricket = new Cricket(players, 2);
-        int over = cricket.getOver();
+        Cricket cricket = new Cricket(players, 4);
         cricket.play();
-        Board board = new Board(players, over);
+        Board board = new Board(cricket);
         board.print();
     }
 }

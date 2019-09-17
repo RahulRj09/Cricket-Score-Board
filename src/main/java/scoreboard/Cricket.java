@@ -44,4 +44,8 @@ public class Cricket {
     public int getOver() {
         return over;
     }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
 }
