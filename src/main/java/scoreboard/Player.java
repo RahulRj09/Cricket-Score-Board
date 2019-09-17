@@ -16,7 +16,7 @@ public class Player {
         this.wickets = 0;
         this.bowlerTotalThrowBalls = 0;
         this.bowlerRuns = 0;
-        this.batsmanTotalPlayedBalls =0;
+        this.batsmanTotalPlayedBalls = 0;
     }
 
     public int getBowlerRuns() {
@@ -25,14 +25,6 @@ public class Player {
 
     public void setBowlerRuns(int bowlerRuns) {
         this.bowlerRuns += bowlerRuns;
-    }
-
-    int play() {
-        int run = getRun();
-        if (run != 5) {
-            setBatsmanRuns(run);
-        }
-        return run;
     }
 
     private int getRun() {
