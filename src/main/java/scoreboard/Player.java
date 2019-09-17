@@ -7,14 +7,16 @@ public class Player {
     private int batsmanRuns;
     private int bowlerRuns;
     private int wickets;
-    private int ball;
+    private int batsmanTotalPlayedBalls;
+    private int bowlerTotalThrowBalls;
 
     public Player(String name) {
         this.name = name;
         this.batsmanRuns = 0;
         this.wickets = 0;
-        this.ball = 0;
+        this.bowlerTotalThrowBalls = 0;
         this.bowlerRuns = 0;
+        this.batsmanTotalPlayedBalls =0;
     }
 
     public int getBowlerRuns() {
@@ -49,12 +51,12 @@ public class Player {
         return name;
     }
 
-    int getBall() {
-        return ball;
+    int getBowlerTotalThrowBalls() {
+        return bowlerTotalThrowBalls;
     }
 
     void setBall() {
-        this.ball += 1;
+        this.bowlerTotalThrowBalls += 1;
     }
 
     public int getWickets() {
@@ -63,5 +65,13 @@ public class Player {
 
     public void setWickets(int wickets) {
         this.wickets += wickets;
+    }
+
+    public int getBatsmanTotalPlayedBalls() {
+        return batsmanTotalPlayedBalls;
+    }
+
+    public void setBatsmanTotalPlayedBalls() {
+        this.batsmanTotalPlayedBalls += 1;
     }
 }

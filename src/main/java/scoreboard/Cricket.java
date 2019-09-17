@@ -19,7 +19,7 @@ public class Cricket {
         for (int i = 1; i <= over * 6; i++) {
             Player currentPlayer = players.get(currentPlayerIndex);
             int run = currentPlayer.play();
-            currentPlayer.setBall();
+            currentPlayer.setBatsmanTotalPlayedBalls();
             Player bowler = players.get(currentBowlerIndex);
             bowler.setBall();
             if (run == 5) {

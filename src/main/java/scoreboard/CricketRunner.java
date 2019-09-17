@@ -9,7 +9,7 @@ public class CricketRunner {
                 new Player("pralhad"), new Player("pavan"));
         Cricket cricket = new Cricket(players, 4);
         cricket.play();
-        Board board = new Board(cricket.getPlayers(),cricket.getOver());
+        Board board = new Board(cricket.getPlayers(), cricket.getOver());
         board.print();
     }
 }
