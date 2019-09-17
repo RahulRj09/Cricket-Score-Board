@@ -15,7 +15,7 @@ public class Cricket {
         this.over = over;
         this.bowlers = bowlers;
         this.currentPlayerIndex = 0;
-        this.currentBowlerIndex = bowlers.size() - 1;
+        this.currentBowlerIndex = bowlers.size()-1;
     }
 
     public void play() {
@@ -32,6 +32,9 @@ public class Cricket {
                 bowler.setBowlerRuns(run);
             }
             if (i % 6 == 0) {
+                if (bowlers.size() * 6 == i) {
+                    this.currentBowlerIndex = bowlers.size();
+                }
                 this.currentBowlerIndex -= 1;
             }
             Board board = new Board(batsman, bowlers, over);
@@ -51,6 +54,7 @@ public class Cricket {
     private int getRun() {
         return new Random().nextInt(6) + 1;
     }
+
     public List<Player> getBowlers() {
         return bowlers;
     }
