@@ -17,7 +17,7 @@ public class CricketRunner {
         Cricket cricket = new Cricket(players, 2);
         int over = cricket.getOver();
         cricket.play();
-        Board board = new Board(players,over);
+        Board board = new Board(players, over);
         board.print();
     }
 }
