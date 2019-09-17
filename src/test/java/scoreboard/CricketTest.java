@@ -16,5 +16,5 @@ public class CricketTest {
         Cricket firstInning = new Cricket(ind, pak, 4);
         firstInning.play();
         ScoreBoard scoreBoard = new ScoreBoard(firstInning.getPlayers(), firstInning.getBowlers(), firstInning.getOver(), firstInning.getWickets());
-    }
-}
+        }
+        }
