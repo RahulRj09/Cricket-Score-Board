@@ -27,10 +27,6 @@ public class Player {
         this.bowlerRuns += bowlerRuns;
     }
 
-    private int getRun() {
-        return new Random().nextInt(6) + 1;
-    }
-
     private void setBatsmanRuns(int batsmanRuns) {
         this.batsmanRuns += batsmanRuns;
     }
