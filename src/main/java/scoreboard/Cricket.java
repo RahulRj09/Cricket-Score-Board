@@ -1,6 +1,7 @@
 package scoreboard;
 
 import java.util.List;
+import java.util.Random;
 
 public class Cricket {
     private List<Player> players;
@@ -49,5 +50,8 @@ public class Cricket {
 
     public List<Player> getPlayers() {
         return players;
+    }
+    private int getRun() {
+        return new Random().nextInt(6) + 1;
     }
 }
