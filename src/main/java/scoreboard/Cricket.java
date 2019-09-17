@@ -13,13 +13,14 @@ public class Cricket {
         this.players = players;
         this.over = over;
         this.currentPlayerIndex = 0;
-        this.currentBowlerIndex = players.size() - 2;
+        this.currentBowlerIndex = players.size() - 1;
     }
 
     public void play() {
         for (int i = 1; i <= over * 6; i++) {
             Player currentPlayer = players.get(currentPlayerIndex);
-            int run = currentPlayer.play();
+            int run = getRun();
+            currentPlayer.setBatsmanRuns(run);
             currentPlayer.setBatsmanTotalPlayedBalls();
             Player bowler = players.get(currentBowlerIndex);
             bowler.setBall();
@@ -29,19 +30,12 @@ public class Cricket {
                 bowler.setBowlerRuns(run);
             }
             if (i % 6 == 0) {
-                this.currentBowlerIndex = getCurrentBowlerIndex(currentBowlerIndex);
+                this.currentBowlerIndex -= 1;
             }
-            Board board = new Board(players,over);
+            Board board = new Board(players, over);
             board.print();
             currentPlayerIndex = run % 2;
         }
-    }
-
-    private int getCurrentBowlerIndex(int i) {
-        if (i == players.size() - 2) {
-            return players.size() - 1;
-        }
-        return players.size() - 2;
     }
 
     public int getOver() {
@@ -51,6 +45,7 @@ public class Cricket {
     public List<Player> getPlayers() {
         return players;
     }
+
     private int getRun() {
         return new Random().nextInt(6) + 1;
     }

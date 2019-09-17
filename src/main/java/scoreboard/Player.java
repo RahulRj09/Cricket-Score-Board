@@ -27,7 +27,7 @@ public class Player {
         this.bowlerRuns += bowlerRuns;
     }
 
-    private void setBatsmanRuns(int batsmanRuns) {
+    void setBatsmanRuns(int batsmanRuns) {
         this.batsmanRuns += batsmanRuns;
     }
 
