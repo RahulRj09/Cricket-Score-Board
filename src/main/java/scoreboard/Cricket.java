@@ -12,6 +12,7 @@ public class Cricket {
     private int totalBalls = 0;
     private int firstBat = 0;
     private int secondBat = 1;
+    private int wickets =0;
 
     public Cricket(List<Player> batsman, List<Player> bowlers, int over) {
         this.batsman = batsman;
@@ -32,6 +33,10 @@ public class Cricket {
             bowler.setBall();
             if (run == 5) {
                 bowler.setWickets(1);
+                setWickets(1);
+                if(getWickets()==batsman.size()-1){
+                    break;
+                }
             } else {
                 bowler.setBowlerRuns(run);
             }
@@ -74,4 +79,11 @@ public class Cricket {
         return bowlers;
     }
 
+    public int getWickets() {
+        return wickets;
+    }
+
+    public void setWickets(int wickets) {
+        this.wickets += wickets;
+    }
 }
