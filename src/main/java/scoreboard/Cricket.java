@@ -11,7 +11,7 @@ public class Cricket {
     private int currentBowlerIndex;
     private int totalBalls = 0;
     private int firstBat = 0;
-    private int secondBat =1;
+    private int secondBat = 1;
 
     public Cricket(List<Player> batsman, List<Player> bowlers, int over) {
         this.batsman = batsman;
@@ -45,13 +45,16 @@ public class Cricket {
             ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, over);
             scoreBoard.print();
             if (run == 1 || run == 3) {
-                if (currentBatsmanIndex == firstBat) {
-                    currentBatsmanIndex = secondBat;
-                }else {
-                    currentBatsmanIndex = firstBat;
-                }
-
+                rotateBatsman();
             }
+        }
+    }
+
+    private void rotateBatsman() {
+        if (currentBatsmanIndex == firstBat) {
+            currentBatsmanIndex = secondBat;
+        } else {
+            currentBatsmanIndex = firstBat;
         }
     }
 
