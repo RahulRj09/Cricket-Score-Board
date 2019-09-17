@@ -47,7 +47,7 @@ public class Cricket {
                 }
                 this.currentBowlerIndex -= 1;
             }
-            ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, over);
+            ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, over, getWickets());
             scoreBoard.print();
             if (run == 1 || run == 3) {
                 rotateBatsman();

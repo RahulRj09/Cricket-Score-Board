@@ -8,12 +8,14 @@ public class ScoreBoard {
     private final List<Player> batsman;
     private final int over;
     private final List<Player> bowlers;
+    private final int wickets;
     private int totalScore = 0;
 
-    public ScoreBoard(List<Player> batsman, List<Player> bowlers, int over) {
+    public ScoreBoard(List<Player> batsman, List<Player> bowlers, int over, int wickets) {
         this.batsman = batsman;
         this.bowlers = bowlers;
         this.over = over;
+        this.wickets = wickets;
     }
 
 
@@ -26,7 +28,7 @@ public class ScoreBoard {
             setTotalScore(player.getBatsmanRuns());
         }
         double currentRunRate = getCurrentRunRate(totalScore, over);
-        System.out.printf("%55s %5f %5d\n", "------------------------------------------ ", currentRunRate, totalScore);
+        System.out.printf("%55s %5f %1d %1s %1d\n", "------------------------------------------ ", currentRunRate,wickets,"-",totalScore);
         System.out.println("\n");
         System.out.printf("%67s\n", "  Bowler  -----------------------------------------------------");
         System.out.printf("%20s   %10s %10s %15s %15s\n", "Player Name", "Runs", "Over", "wickets", "EconomyRate");
