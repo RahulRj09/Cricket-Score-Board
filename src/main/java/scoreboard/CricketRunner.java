@@ -5,13 +5,17 @@ import java.util.List;
 
 public class CricketRunner {
     public static void main(String[] args) {
-        List<Player> batsman = Arrays.asList(new Player("rahul"), new Player("nitesh"),
+        List<Player> ind = Arrays.asList(new Player("rahul"), new Player("nitesh"),
                 new Player("pralhad"), new Player("pavan"));
-        List<Player> bowlers = Arrays.asList(new Player("rahul"), new Player("nitesh"),
-                new Player("pralhad"), new Player("pavan"));
-        Cricket cricket = new Cricket(batsman,bowlers, 5);
-        cricket.play();
-        Board board = new Board(cricket.getPlayers(),cricket.getBowlers(), cricket.getOver());
+        List<Player> pak = Arrays.asList(new Player("mohit"), new Player("aman"),
+                new Player("pankaj"), new Player("pk"));
+        Cricket firstInning = new Cricket(ind,pak, 4);
+        firstInning.play();
+        Board board = new Board(firstInning.getPlayers(),firstInning.getBowlers(), firstInning.getOver());
         board.print();
+        Cricket secondInning = new Cricket(pak,ind,8);
+        secondInning.play();
+        Board board1 = new Board(secondInning.getPlayers(),secondInning.getBowlers(),secondInning.getOver());
+
     }
 }

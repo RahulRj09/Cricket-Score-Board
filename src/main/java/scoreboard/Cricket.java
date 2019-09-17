@@ -15,7 +15,7 @@ public class Cricket {
         this.over = over;
         this.bowlers = bowlers;
         this.currentPlayerIndex = 0;
-        this.currentBowlerIndex = bowlers.size()-1;
+        this.currentBowlerIndex = bowlers.size() - 1;
     }
 
     public void play() {
