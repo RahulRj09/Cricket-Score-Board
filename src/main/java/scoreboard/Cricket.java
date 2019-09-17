@@ -34,7 +34,7 @@ public class Cricket {
             if (i % 6 == 0) {
                 this.currentBowlerIndex -= 1;
             }
-            Board board = new Board(batsman, over);
+            Board board = new Board(batsman, bowlers, over);
             board.print();
             currentPlayerIndex = run % 2;
         }
