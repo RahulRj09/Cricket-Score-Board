@@ -3,14 +3,14 @@ package scoreboard;
 
 import java.util.List;
 
-public class Board {
+public class ScoreBoard {
 
     private final List<Player> batsman;
     private final int over;
     private final List<Player> bowlers;
     private int totalScore = 0;
 
-    public Board(List<Player> batsman, List<Player> bowlers, int over) {
+    public ScoreBoard(List<Player> batsman, List<Player> bowlers, int over) {
         this.batsman = batsman;
         this.bowlers = bowlers;
         this.over = over;

@@ -15,6 +15,6 @@ public class CricketTest {
                 new Player("pankaj"), new Player("pk"));
         Cricket firstInning = new Cricket(ind, pak, 4);
         firstInning.play();
-        Board board = new Board(firstInning.getPlayers(), firstInning.getBowlers(), firstInning.getOver());
+        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getPlayers(), firstInning.getBowlers(), firstInning.getOver());
     }
 }

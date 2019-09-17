@@ -11,12 +11,12 @@ public class CricketRunner {
                 new Player("pankaj"), new Player("pk"));
         Cricket firstInning = new Cricket(ind,pak, 4);
         firstInning.play();
-        Board board = new Board(firstInning.getPlayers(),firstInning.getBowlers(), firstInning.getOver());
-        board.print();
+        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getPlayers(),firstInning.getBowlers(), firstInning.getOver());
+        scoreBoard.print();
         System.out.println("----++++++++++++-------------------********************---------------++++++++++++++++-----------");
         Cricket secondInning = new Cricket(pak,ind,4);
         secondInning.play();
-        Board board1 = new Board(secondInning.getPlayers(),secondInning.getBowlers(),secondInning.getOver());
-        board1.print();
+        ScoreBoard scoreBoard1 = new ScoreBoard(secondInning.getPlayers(),secondInning.getBowlers(),secondInning.getOver());
+        scoreBoard1.print();
     }
 }

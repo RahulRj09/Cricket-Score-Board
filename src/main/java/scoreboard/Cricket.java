@@ -37,8 +37,8 @@ public class Cricket {
                 }
                 this.currentBowlerIndex -= 1;
             }
-            Board board = new Board(batsman, bowlers, over);
-            board.print();
+            ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, over);
+            scoreBoard.print();
             currentPlayerIndex = run % 2;
         }
     }
