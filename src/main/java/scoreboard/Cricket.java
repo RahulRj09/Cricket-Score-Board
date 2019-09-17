@@ -7,15 +7,16 @@ public class Cricket {
     private final List<Player> bowlers;
     private List<Player> batsman;
     private int over;
-    private int currentBatsmanIndex;
+    private int currentBatsmanIndex = 0;
     private int currentBowlerIndex;
     private int totalBalls = 0;
+    private int firstBat = 0;
+    private int secondBat =1;
 
     public Cricket(List<Player> batsman, List<Player> bowlers, int over) {
         this.batsman = batsman;
         this.over = over;
         this.bowlers = bowlers;
-        this.currentBatsmanIndex = 0;
         this.currentBowlerIndex = bowlers.size() - 1;
         this.totalBalls = bowlers.size() * 6;
     }
@@ -43,7 +44,14 @@ public class Cricket {
             }
             ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, over);
             scoreBoard.print();
-            currentBatsmanIndex = run % 2;
+            if (run == 1 || run == 3) {
+                if (currentBatsmanIndex == firstBat) {
+                    currentBatsmanIndex = secondBat;
+                }else {
+                    currentBatsmanIndex = firstBat;
+                }
+
+            }
         }
     }
 
