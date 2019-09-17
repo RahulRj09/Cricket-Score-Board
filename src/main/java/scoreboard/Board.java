@@ -25,12 +25,12 @@ public class Board {
                 setTotalScore(player.getBatsmanRuns());
             }
         }
-        double currentRunRate = getCurrentRunRate(totalScore,over);
+        double currentRunRate = getCurrentRunRate(totalScore, over);
         System.out.printf("%55s %5f %5d\n", "------------------------------------------ ", currentRunRate, totalScore);
         System.out.println("\n");
         System.out.printf("%67s\n", "  Bowler  -----------------------------------------------------");
         System.out.printf("%20s   %10s %10s %15s %15s\n", "Player Name", "Runs", "Over", "wickets", "EconomyRate");
-        for (Player player :players) {
+        for (Player player : players) {
             if (player.getBowlerRuns() != 0) {
                 int over = player.getBall() / 6;
                 double economyRate = calculateEconomyRate(player.getBowlerRuns(), over);
@@ -49,7 +49,11 @@ public class Board {
     }
 
     public double calculateEconomyRate(int bowlerRuns, int over) {
-        return bowlerRuns / over;
+        try {
+            return bowlerRuns / over;
+        } catch (ArithmeticException e) {
+            return 0.0;
+        }
     }
 
     public double calculateStrikeRate(int score, int ball) {

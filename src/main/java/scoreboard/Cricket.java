@@ -30,6 +30,8 @@ public class Cricket {
             if (i % 6 == 0) {
                 this.currentBowlerIndex = getCurrentBowlerIndex(currentBowlerIndex);
             }
+            Board board = new Board(players,over);
+            board.print();
             currentPlayerIndex = run % 2;
         }
     }
