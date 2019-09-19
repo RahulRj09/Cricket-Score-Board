@@ -33,8 +33,13 @@ public class Cricket {
             if (run == 5) {
                 bowler.setWickets(1);
                 setTotalWickets();
-                if (getTotalWickets() == batsman.size()-1) {
+                if (getTotalWickets() == batsman.size() - 1) {
                     break;
+                }
+                if (firstBat == currentBatsmanIndex) {
+                    firstBat += 2;
+                } else {
+                    secondBat += 2;
                 }
             } else {
                 bowler.setBowlerRuns(run);
