@@ -12,7 +12,7 @@ public class Cricket {
     private int totalBalls = 0;
     private int firstBat = 0;
     private int secondBat = 1;
-    private int wickets = 0;
+    private int totalWickets = 0;
 
     public Cricket(List<Player> batsman, List<Player> bowlers, int over) {
         this.batsman = batsman;
@@ -27,18 +27,18 @@ public class Cricket {
         for (int i = 1; i <= over * 6; i++) {
             Player currentPlayer = batsman.get(currentBatsmanIndex);
             int run = getRun();
-            currentPlayer.setBatsmanRuns(run);
             currentPlayer.setBatsmanTotalPlayedBalls();
             Player bowler = bowlers.get(currentBowlerIndex);
             bowler.setBall();
             if (run == 5) {
                 bowler.setWickets(1);
-                setWickets(1);
-                if (getWickets() == batsman.size() - 2) {
+                setTotalWickets();
+                if (getTotalWickets() == batsman.size()-1) {
                     break;
                 }
             } else {
                 bowler.setBowlerRuns(run);
+                currentPlayer.setBatsmanRuns(run);
             }
             if (i % 6 == 0) {
                 if (this.totalBalls == i) {
@@ -47,7 +47,7 @@ public class Cricket {
                 }
                 this.currentBowlerIndex -= 1;
             }
-            ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, over, getWickets());
+            ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, over, getTotalWickets());
             scoreBoard.print();
             if (run == 1 || run == 3) {
                 rotateBatsman();
@@ -79,11 +79,11 @@ public class Cricket {
         return bowlers;
     }
 
-    public int getWickets() {
-        return wickets;
+    public int getTotalWickets() {
+        return totalWickets;
     }
 
-    public void setWickets(int wickets) {
-        this.wickets += wickets;
+    private void setTotalWickets() {
+        this.totalWickets += 1;
     }
 }
