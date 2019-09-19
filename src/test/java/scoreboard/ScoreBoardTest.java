@@ -37,7 +37,7 @@ public class ScoreBoardTest {
 
     @Test
     public void shouldBeSetWicket() {
-        List<Player> batsman = Arrays.asList(new Player("rahul"), new Player("nitesh"),new Player("aman"));
+        List<Player> batsman = Arrays.asList(new Player("rahul"), new Player("nitesh"), new Player("aman"));
         Player bowler = new Player("pk");
         List<Player> bowlers = new ArrayList<>();
         bowlers.add(bowler);
@@ -45,5 +45,17 @@ public class ScoreBoardTest {
         when(cricket.getRun()).thenReturn(5);
         cricket.play();
         assertEquals(2, bowler.getWickets());
+    }
+
+    @Test
+    public void shouldBeSetBowlerRun() {
+        List<Player> batsman = Arrays.asList(new Player("rahul"), new Player("nitesh"), new Player("aman"));
+        Player bowler = new Player("pk");
+        List<Player> bowlers = new ArrayList<>();
+        bowlers.add(bowler);
+        Cricket cricket = spy(new Cricket(batsman, bowlers, 1));
+        when(cricket.getRun()).thenReturn(1);
+        cricket.play();
+        assertEquals(6, bowler.getBowlerRuns());
     }
 }
