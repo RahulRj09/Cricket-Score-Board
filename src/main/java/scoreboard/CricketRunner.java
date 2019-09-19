@@ -11,14 +11,13 @@ public class CricketRunner {
                 new Player("pankaj"), new Player("pk"));
         Cricket firstInning = new Cricket(ind, pak, 4);
         firstInning.play();
-        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getPlayers(), firstInning.getBowlers(),
-                firstInning.getOver(), firstInning.getWickets());
+        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getPlayers(), firstInning.getBowlers(), firstInning.getOver(), firstInning.getWickets());
         Cricket secondInning = new Cricket(pak, ind, 4);
         secondInning.play();
         scoreBoard.print();
-        System.out.println("----++++++++++++-------------------********************---------------++++++++++++++++-----------");
-        ScoreBoard scoreBoard1 = new ScoreBoard(secondInning.getPlayers(), secondInning.getBowlers(),
-                secondInning.getOver(), secondInning.getWickets());
+        System.out.println("---------++++++++++++-------------------********************---------------++++++++++++++++-----------");
+        ScoreBoard scoreBoard1 = new ScoreBoard(secondInning.getPlayers(), secondInning.getBowlers(), secondInning.getOver(), secondInning.getWickets());
         scoreBoard1.print();
     }
 }
+

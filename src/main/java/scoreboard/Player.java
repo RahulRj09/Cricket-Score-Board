@@ -1,7 +1,5 @@
 package scoreboard;
 
-import java.util.Random;
-
 public class Player {
     private String name;
     private int batsmanRuns;
