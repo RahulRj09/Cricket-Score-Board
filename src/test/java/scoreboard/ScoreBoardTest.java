@@ -58,4 +58,15 @@ public class ScoreBoardTest {
         cricket.play();
         assertEquals(6, bowler.getBowlerRuns());
     }
+    @Test
+    public void shouldBeSetBatsmanRun() {
+        List<Player> batsman = Arrays.asList(new Player("rahul"), new Player("nitesh"), new Player("aman"));
+        Player bowler = new Player("pk");
+        List<Player> bowlers = new ArrayList<>();
+        bowlers.add(bowler);
+        Cricket cricket = spy(new Cricket(batsman, bowlers, 1));
+        when(cricket.getRun()).thenReturn(1);
+        cricket.play();
+        assertEquals(3, batsman.get(0).getBatsmanRuns());
+    }
 }
