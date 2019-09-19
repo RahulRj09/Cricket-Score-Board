@@ -10,6 +10,7 @@ public class Cricket {
     private int currentBatsmanIndex = 0;
     private int currentBowlerIndex;
     private int totalBalls = 0;
+    private int playedBatsman = 1;
     private int firstBat = 0;
     private int secondBat = 1;
     private int totalWickets = 0;
@@ -36,11 +37,12 @@ public class Cricket {
                 if (getTotalWickets() == batsman.size() - 1) {
                     break;
                 }
-                if (firstBat == currentBatsmanIndex) {
-                    firstBat += 2;
+                if (this.firstBat == this.currentBatsmanIndex) {
+                    this.firstBat = this.playedBatsman;
                 } else {
-                    secondBat += 2;
+                    this.secondBat = this.playedBatsman;
                 }
+                this.playedBatsman++;
             } else {
                 bowler.setBowlerRuns(run);
                 currentPlayer.setBatsmanRuns(run);
