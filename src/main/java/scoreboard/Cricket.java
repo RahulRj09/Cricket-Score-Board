@@ -86,4 +86,8 @@ public class Cricket {
     private void setTotalWickets() {
         this.totalWickets += 1;
     }
+
+    public int getCurrentBatsmanIndex() {
+        return currentBatsmanIndex;
+    }
 }
