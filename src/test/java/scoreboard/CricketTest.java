@@ -2,7 +2,6 @@ package scoreboard;
 
 import org.junit.Test;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +33,7 @@ public class CricketTest {
         bowlers.add(bowler);
         Team india = new Team(batsman, "india");
         Team pakistan = new Team(bowlers, "pakistan");
-        Cricket cricket= new Cricket(india, pakistan, 4);
+        Cricket cricket = new Cricket(india, pakistan, 4);
         when(cricket.getRun()).thenReturn(5);
         cricket.play();
         assertEquals(2, bowler.getWickets());

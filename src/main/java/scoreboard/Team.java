@@ -25,6 +25,6 @@ public class Team {
     }
 
     public void setTotalScore(int totalScore) {
-        this.totalScore = totalScore;
+        this.totalScore += totalScore;
     }
 }

@@ -48,6 +48,7 @@ public class Cricket {
             } else {
                 bowler.setBowlerRuns(run);
                 currentPlayer.setBatsmanRuns(run);
+                this.batsman.setTotalScore(run);
             }
             if (i % 6 == 0) {
                 if (this.totalBalls == i) {
