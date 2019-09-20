@@ -13,7 +13,7 @@ public class ScoreBoardTest {
     public void shouldBeCalculateTheBatsmanBattingStrikeRate() {
         List<Player> batsman = new ArrayList<>();
         List<Player> bowlers = new ArrayList<>();
-        ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, 2, 2, this.batsman.getTotalScore());
+        ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, 2, 2, 0);
         assertEquals(104.00000, scoreBoard.calculateStrikeRate(93, 89), 0);
     }
 
@@ -21,7 +21,7 @@ public class ScoreBoardTest {
     public void shouldBeCalculateTheBowlerEconomyRate() {
         List<Player> batsman = new ArrayList<>();
         List<Player> bowlers = new ArrayList<>();
-        ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, 2, 2, this.batsman.getTotalScore());
+        ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, 2, 2, 0);
         assertEquals(3.00000, scoreBoard.calculateEconomyRate(3, 1), 0);
     }
 
@@ -29,7 +29,7 @@ public class ScoreBoardTest {
     public void shouldBeCalculateTheCurrentRunRate() {
         List<Player> batsman = new ArrayList<>();
         List<Player> bowlers = new ArrayList<>();
-        ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, 2, 2, this.batsman.getTotalScore());
+        ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, 2, 2, 0);
         assertEquals(15.0, scoreBoard.getCurrentRunRate(30, 2), 0);
     }
 

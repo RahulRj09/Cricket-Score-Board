@@ -24,7 +24,7 @@ public class CricketRunner {
         scoreBoard.print();
         System.out.println("---------++++++++++++-------------------********************---------------++++++++++++++++-----------");
         ScoreBoard scoreBoard1 = new ScoreBoard(secondInning.getBowlers().getPlayers(), secondInning.getBowlers().getPlayers(),
-                secondInning.getOver(), secondInning.getTotalWickets(),secondInning.getBatsman().getTotalScore());
+                secondInning.getOver(), secondInning.getTotalWickets(), secondInning.getBatsman().getTotalScore());
         scoreBoard1.print();
     }
 }
