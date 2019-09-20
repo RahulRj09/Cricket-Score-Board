@@ -18,13 +18,13 @@ public class CricketRunner {
         Cricket firstInning = new Cricket(india, pakistan, 50);
         firstInning.play();
         ScoreBoard scoreBoard = new ScoreBoard(firstInning.getBatsman().getPlayers(), firstInning.getBowlers().getPlayers(),
-                firstInning.getOver(), firstInning.getTotalWickets(), firstInning.getBatsman().getTotalScore());
+                firstInning.getOver(), firstInning.getTotalWickets(), firstInning.getBatsman().getTotalScore(), firstInning.getBatsman().getName());
         Cricket secondInning = new Cricket(pakistan, india, 50);
         secondInning.play();
         scoreBoard.print();
         System.out.println("---------++++++++++++-------------------********************---------------++++++++++++++++-----------");
         ScoreBoard scoreBoard1 = new ScoreBoard(secondInning.getBowlers().getPlayers(), secondInning.getBowlers().getPlayers(),
-                secondInning.getOver(), secondInning.getTotalWickets(), secondInning.getBatsman().getTotalScore());
+                secondInning.getOver(), secondInning.getTotalWickets(), secondInning.getBatsman().getTotalScore(), secondInning.getBatsman().getName());
         scoreBoard1.print();
     }
 }

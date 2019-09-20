@@ -23,7 +23,7 @@ public class CricketTest {
         firstInning.play();
         ScoreBoard scoreBoard = new ScoreBoard(firstInning.getBatsman().getPlayers(),
                 firstInning.getBowlers().getPlayers(), firstInning.getOver(), firstInning.getTotalWickets(),
-                firstInning.getBatsman().getTotalScore());
+                firstInning.getBatsman().getTotalScore(), getBatsman().getName());
     }
 
 

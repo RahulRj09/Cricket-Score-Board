@@ -9,26 +9,29 @@ public class ScoreBoard {
     private final int over;
     private final List<Player> bowlers;
     private final int wickets;
+    private final String name;
     private int totalScore;
 
-    public ScoreBoard(List<Player> batsman, List<Player> bowlers, int over, int wickets, int totalScore) {
+    public ScoreBoard(List<Player> batsman, List<Player> bowlers, int over, int wickets, int totalScore, String name) {
         this.batsman = batsman;
         this.bowlers = bowlers;
         this.over = over;
         this.wickets = wickets;
         this.totalScore = totalScore;
+        this.name = name;
     }
 
 
     void print() {
-        System.out.printf("%67s\n", "  Batsman  -----------------------------------------------------");
+        System.out.printf("%40s %5s %5s %5s\n", "  Batting  --------------","current R.R","Wickets","Total Score");
+        double currentRunRate = getCurrentRunRate(totalScore, over);
+        System.out.printf("%40s %5f %5d %5s %5d\n", "------------------------ ", currentRunRate, wickets, "-", totalScore);
+        System.out.println("\n");
         System.out.printf("%20s   %10s %10s %15s\n", "Player Name", "Runs", "Balls", "Strike Rate");
         for (Player player : batsman) {
             double strikeRate = calculateStrikeRate(player.getBatsmanRuns(), player.getBatsmanTotalPlayedBalls());
             System.out.printf("%20s   %10d %10d %15f \n", player.getName(), player.getBatsmanRuns(), player.getBatsmanTotalPlayedBalls(), strikeRate);
         }
-        double currentRunRate = getCurrentRunRate(totalScore, over);
-        System.out.printf("%55s %5f %1d %1s %1d\n", "------------------------------------------ ", currentRunRate, wickets, "-", totalScore);
         System.out.println("\n");
         System.out.printf("%67s\n", "  Bowler  -----------------------------------------------------");
         System.out.printf("%20s   %10s %10s %15s %15s\n", "Player Name", "Runs", "Over", "wickets", "EconomyRate");
@@ -40,6 +43,7 @@ public class ScoreBoard {
 
         }
         System.out.println("\n");
+        System.out.println("-------------**********---------------");
     }
 
     public double getCurrentRunRate(int score, int over) {
