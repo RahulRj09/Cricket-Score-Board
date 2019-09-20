@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Random;
 
 public class Cricket {
-    private final List<Player> bowlers;
-    private List<Player> batsman;
+
+    private Team bowlers;
+    private Team batsman;
     private int over;
     private int currentBatsmanIndex = 0;
     private int currentBowlerIndex;
@@ -16,15 +17,16 @@ public class Cricket {
     private int totalWickets = 0;
 
     public Cricket(Team batsman, Team bowlers, int over) {
-        this.batsman = batsman.getPlayers();
+        this.batsman = batsman;
         this.over = over;
-        this.bowlers = bowlers.getPlayers();
+        this.bowlers = bowlers;
         this.currentBowlerIndex = bowlers.getPlayers().size() - 1;
         this.totalBalls = bowlers.getPlayers().size() * 6;
     }
 
     public void play() {
-
+        List<Player> batsman = this.batsman.getPlayers();
+        List<Player> bowlers = this.bowlers.getPlayers();
         for (int i = 1; i <= over * 6; i++) {
             Player currentPlayer = batsman.get(currentBatsmanIndex);
             int run = getRun();
@@ -74,16 +76,8 @@ public class Cricket {
         return over;
     }
 
-    public List<Player> getPlayers() {
-        return batsman;
-    }
-
     public int getRun() {
         return new Random().nextInt(6) + 1;
-    }
-
-    public List<Player> getBowlers() {
-        return bowlers;
     }
 
     public int getTotalWickets() {
@@ -96,5 +90,13 @@ public class Cricket {
 
     public int getCurrentBatsmanIndex() {
         return currentBatsmanIndex;
+    }
+
+    public Team getBowlers() {
+        return bowlers;
+    }
+
+    public Team getBatsman() {
+        return batsman;
     }
 }

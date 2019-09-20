@@ -17,12 +17,14 @@ public class CricketRunner {
         Team pakistan = new Team(pak, "pakistan");
         Cricket firstInning = new Cricket(india, pakistan, 50);
         firstInning.play();
-        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getPlayers(), firstInning.getBowlers(), firstInning.getOver(), firstInning.getTotalWickets());
+        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getBatsman().getPlayers(), firstInning.getBowlers().getPlayers(),
+                firstInning.getOver(), firstInning.getTotalWickets());
         Cricket secondInning = new Cricket(pakistan, india, 50);
         secondInning.play();
         scoreBoard.print();
         System.out.println("---------++++++++++++-------------------********************---------------++++++++++++++++-----------");
-        ScoreBoard scoreBoard1 = new ScoreBoard(secondInning.getPlayers(), secondInning.getBowlers(), secondInning.getOver(), secondInning.getTotalWickets());
+        ScoreBoard scoreBoard1 = new ScoreBoard(secondInning.getBowlers().getPlayers(), secondInning.getBowlers().getPlayers(),
+                secondInning.getOver(), secondInning.getTotalWickets());
         scoreBoard1.print();
     }
 }
