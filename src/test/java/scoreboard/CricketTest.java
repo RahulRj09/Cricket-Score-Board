@@ -18,9 +18,11 @@ public class CricketTest {
                 new Player("pralhad"), new Player("pavan"));
         List<Player> pak = Arrays.asList(new Player("mohit"), new Player("aman"),
                 new Player("pankaj"), new Player("pk"));
-        Cricket firstInning = new Cricket(ind, pak, 4);
+        Team india = new Team(ind, "india");
+        Team pakistan = new Team(pak, "pakistan");
+        Cricket firstInning = new Cricket(india, pakistan, 4);
         firstInning.play();
-        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getPlayers(), firstInning.getBowlers(), firstInning.getOver(), firstInning.getTotalWickets());
+        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getBatsman().getPlayers(), firstInning.getBowlers().getPlayers(), firstInning.getOver(), firstInning.getTotalWickets());
     }
 
 
@@ -30,7 +32,9 @@ public class CricketTest {
         Player bowler = new Player("pk");
         List<Player> bowlers = new ArrayList<>();
         bowlers.add(bowler);
-        Cricket cricket = spy(new Cricket(batsman, bowlers, 1));
+        Team india = new Team(batsman, "india");
+        Team pakistan = new Team(bowlers, "pakistan");
+        Cricket cricket= new Cricket(india, pakistan, 4);
         when(cricket.getRun()).thenReturn(5);
         cricket.play();
         assertEquals(2, bowler.getWickets());
@@ -42,7 +46,9 @@ public class CricketTest {
         Player bowler = new Player("pk");
         List<Player> bowlers = new ArrayList<>();
         bowlers.add(bowler);
-        Cricket cricket = spy(new Cricket(batsman, bowlers, 1));
+        Team india = new Team(batsman, "india");
+        Team pakistan = new Team(bowlers, "pakistan");
+        Cricket cricket = spy(new Cricket(india, pakistan, 1));
         when(cricket.getRun()).thenReturn(1);
         cricket.play();
         assertEquals(6, bowler.getBowlerRuns());
@@ -54,7 +60,9 @@ public class CricketTest {
         Player bowler = new Player("pk");
         List<Player> bowlers = new ArrayList<>();
         bowlers.add(bowler);
-        Cricket cricket = spy(new Cricket(batsman, bowlers, 1));
+        Team india = new Team(batsman, "india");
+        Team pakistan = new Team(bowlers, "pakistan");
+        Cricket cricket = spy(new Cricket(india, pakistan, 1));
         when(cricket.getRun()).thenReturn(1);
         cricket.play();
         assertEquals(3, batsman.get(0).getBatsmanRuns());
@@ -66,7 +74,9 @@ public class CricketTest {
         Player bowler = new Player("pk");
         List<Player> bowlers = new ArrayList<>();
         bowlers.add(bowler);
-        Cricket cricket = spy(new Cricket(batsman, bowlers, 1));
+        Team india = new Team(batsman, "india");
+        Team pakistan = new Team(bowlers, "pakistan");
+        Cricket cricket = spy(new Cricket(india, pakistan, 1));
         when(cricket.getRun()).thenReturn(1);
         cricket.play();
         assertEquals(0, cricket.getCurrentBatsmanIndex());
