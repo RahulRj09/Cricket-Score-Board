@@ -13,7 +13,7 @@ public class CricketRunner {
                 new Player("pankaj"), new Player("pk"), new Player("rahul"),
                 new Player("nitesh"), new Player("pralhad"), new Player("pavan"),
                 new Player("ritik"), new Player("aakash"), new Player("dipesh"));
-
+        Team india = new Team(ind, "india");
         Cricket firstInning = new Cricket(ind, pak, 50);
         firstInning.play();
         ScoreBoard scoreBoard = new ScoreBoard(firstInning.getPlayers(), firstInning.getBowlers(), firstInning.getOver(), firstInning.getTotalWickets());
