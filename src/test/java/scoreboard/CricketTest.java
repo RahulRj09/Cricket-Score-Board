@@ -21,7 +21,7 @@ public class CricketTest {
         Team pakistan = new Team(pak, "pakistan");
         Cricket firstInning = new Cricket(india, pakistan, 4);
         firstInning.play();
-        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getBatsman().getPlayers(), firstInning.getBowlers().getPlayers(), firstInning.getOver(), firstInning.getTotalWickets());
+        ScoreBoard scoreBoard = new ScoreBoard(firstInning.getBatsman().getPlayers(), firstInning.getBowlers().getPlayers(), firstInning.getOver(), firstInning.getTotalWickets(), this.batsman.getTotalScore());
     }
 
 
