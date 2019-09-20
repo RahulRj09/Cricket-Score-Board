@@ -15,12 +15,12 @@ public class Cricket {
     private int secondBat = 1;
     private int totalWickets = 0;
 
-    public Cricket(List<Player> batsman, List<Player> bowlers, int over) {
-        this.batsman = batsman;
+    public Cricket(Team batsman, Team bowlers, int over) {
+        this.batsman = batsman.getPlayers();
         this.over = over;
-        this.bowlers = bowlers;
-        this.currentBowlerIndex = bowlers.size() - 1;
-        this.totalBalls = bowlers.size() * 6;
+        this.bowlers = bowlers.getPlayers();
+        this.currentBowlerIndex = bowlers.getPlayers().size() - 1;
+        this.totalBalls = bowlers.getPlayers().size() * 6;
     }
 
     public void play() {

@@ -14,10 +14,11 @@ public class CricketRunner {
                 new Player("nitesh"), new Player("pralhad"), new Player("pavan"),
                 new Player("ritik"), new Player("aakash"), new Player("dipesh"));
         Team india = new Team(ind, "india");
-        Cricket firstInning = new Cricket(ind, pak, 50);
+        Team pakistan = new Team(pak, "pakistan");
+        Cricket firstInning = new Cricket(india, pakistan, 50);
         firstInning.play();
         ScoreBoard scoreBoard = new ScoreBoard(firstInning.getPlayers(), firstInning.getBowlers(), firstInning.getOver(), firstInning.getTotalWickets());
-        Cricket secondInning = new Cricket(pak, ind, 50);
+        Cricket secondInning = new Cricket(pakistan, india, 50);
         secondInning.play();
         scoreBoard.print();
         System.out.println("---------++++++++++++-------------------********************---------------++++++++++++++++-----------");
