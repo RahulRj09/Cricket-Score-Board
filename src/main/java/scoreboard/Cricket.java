@@ -57,11 +57,12 @@ public class Cricket {
                 }
                 this.currentBowlerIndex -= 1;
             }
-            ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, over, getTotalWickets(), this.batsman.getTotalScore(),getBatsman().getName());
+            ScoreBoard scoreBoard = new ScoreBoard(batsman, bowlers, over, getTotalWickets(), getBatsman().getTotalScore(),getBatsman().getName());
             scoreBoard.print();
             if (run == 1 || run == 3) {
                 rotateBatsman();
             }
+            System.out.println(getBatsman().getTotalScore()+""+ getBatsman().getName());
         }
     }
 

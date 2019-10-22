@@ -23,7 +23,7 @@ public class ScoreBoard {
 
 
     void print() {
-        System.out.printf("%40s %5s %5s %5s\n", "  Batting  --------------","current R.R","Wickets","Total Score");
+        System.out.printf("%27s %5s %5s %5s %5s\n", "  Batting ",name,"current R.R","Wickets","Total Score");
         double currentRunRate = getCurrentRunRate(totalScore, over);
         System.out.printf("%40s %5f %5d %5s %5d\n", "------------------------ ", currentRunRate, wickets, "-", totalScore);
         System.out.println("\n");
